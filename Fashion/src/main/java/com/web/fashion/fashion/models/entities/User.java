@@ -2,10 +2,12 @@ package com.web.fashion.fashion.models.entities;
 
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table
@@ -49,8 +51,14 @@ public class User {
     @Column(nullable = false)
     private int status;
 
-    @OneToOne
-    @JoinColumn(name = "userId")
+    @OneToOne(mappedBy = "user")
     private Account account;
+
+    @ManyToMany
+    @JoinTable(name = "user_role",
+        joinColumns = @JoinColumn(name = "userId"),
+        inverseJoinColumns = @JoinColumn(name = "roleId"))
+    private List<Role> roles;
+
 
 }

@@ -1,11 +1,17 @@
 package com.web.fashion.fashion.models.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "accounts")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Account {
 
     @Id
@@ -20,4 +26,5 @@ public class Account {
     @OneToOne
     @JoinColumn(name = "userId")
     private User user;
+
 }

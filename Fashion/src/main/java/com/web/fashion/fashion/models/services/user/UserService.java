@@ -1,4 +1,4 @@
-package com.web.fashion.fashion.models.services;
+package com.web.fashion.fashion.models.services.user;
 
 import com.web.fashion.fashion.DTO.UserDTO;
 import com.web.fashion.fashion.models.entities.User;

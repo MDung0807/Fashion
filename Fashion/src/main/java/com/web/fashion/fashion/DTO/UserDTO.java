@@ -1,6 +1,7 @@
 package com.web.fashion.fashion.DTO;
 
 import com.web.fashion.fashion.Utils.Utils;
+import com.web.fashion.fashion.models.entities.Account;
 import jakarta.persistence.Column;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -41,6 +42,8 @@ public class UserDTO {
     private LocalDateTime lastLogin;
 
     private int status;
+
+    private Account account;
 
     public static UserDTO getInstance(){
         if (instance == null)
